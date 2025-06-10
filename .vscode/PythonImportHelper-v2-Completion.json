@@ -1,0 +1,328 @@
+[
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "uuid",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "uuid",
+        "description": "uuid",
+        "detail": "uuid",
+        "documentation": {}
+    },
+    {
+        "label": "nltk",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "nltk",
+        "description": "nltk",
+        "detail": "nltk",
+        "documentation": {}
+    },
+    {
+        "label": "gTTS",
+        "importPath": "gtts",
+        "description": "gtts",
+        "isExtraImport": true,
+        "detail": "gtts",
+        "documentation": {}
+    },
+    {
+        "label": "AudioSegment",
+        "importPath": "pydub",
+        "description": "pydub",
+        "isExtraImport": true,
+        "detail": "pydub",
+        "documentation": {}
+    },
+    {
+        "label": "speech_recognition",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "speech_recognition",
+        "description": "speech_recognition",
+        "detail": "speech_recognition",
+        "documentation": {}
+    },
+    {
+        "label": "Update",
+        "importPath": "telegram",
+        "description": "telegram",
+        "isExtraImport": true,
+        "detail": "telegram",
+        "documentation": {}
+    },
+    {
+        "label": "ApplicationBuilder",
+        "importPath": "telegram.ext",
+        "description": "telegram.ext",
+        "isExtraImport": true,
+        "detail": "telegram.ext",
+        "documentation": {}
+    },
+    {
+        "label": "CommandHandler",
+        "importPath": "telegram.ext",
+        "description": "telegram.ext",
+        "isExtraImport": true,
+        "detail": "telegram.ext",
+        "documentation": {}
+    },
+    {
+        "label": "MessageHandler",
+        "importPath": "telegram.ext",
+        "description": "telegram.ext",
+        "isExtraImport": true,
+        "detail": "telegram.ext",
+        "documentation": {}
+    },
+    {
+        "label": "ContextTypes",
+        "importPath": "telegram.ext",
+        "description": "telegram.ext",
+        "isExtraImport": true,
+        "detail": "telegram.ext",
+        "documentation": {}
+    },
+    {
+        "label": "filters",
+        "importPath": "telegram.ext",
+        "description": "telegram.ext",
+        "isExtraImport": true,
+        "detail": "telegram.ext",
+        "documentation": {}
+    },
+    {
+        "label": "LinearSVC",
+        "importPath": "sklearn.svm",
+        "description": "sklearn.svm",
+        "isExtraImport": true,
+        "detail": "sklearn.svm",
+        "documentation": {}
+    },
+    {
+        "label": "TfidfVectorizer",
+        "importPath": "sklearn.feature_extraction.text",
+        "description": "sklearn.feature_extraction.text",
+        "isExtraImport": true,
+        "detail": "sklearn.feature_extraction.text",
+        "documentation": {}
+    },
+    {
+        "label": "Segmenter",
+        "importPath": "natasha",
+        "description": "natasha",
+        "isExtraImport": true,
+        "detail": "natasha",
+        "documentation": {}
+    },
+    {
+        "label": "MorphVocab",
+        "importPath": "natasha",
+        "description": "natasha",
+        "isExtraImport": true,
+        "detail": "natasha",
+        "documentation": {}
+    },
+    {
+        "label": "NewsEmbedding",
+        "importPath": "natasha",
+        "description": "natasha",
+        "isExtraImport": true,
+        "detail": "natasha",
+        "documentation": {}
+    },
+    {
+        "label": "NewsMorphTagger",
+        "importPath": "natasha",
+        "description": "natasha",
+        "isExtraImport": true,
+        "detail": "natasha",
+        "documentation": {}
+    },
+    {
+        "label": "Doc",
+        "importPath": "natasha",
+        "description": "natasha",
+        "isExtraImport": true,
+        "detail": "natasha",
+        "documentation": {}
+    },
+    {
+        "label": "edit_distance",
+        "importPath": "nltk.metrics",
+        "description": "nltk.metrics",
+        "isExtraImport": true,
+        "detail": "nltk.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "load_dialogues",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def load_dialogues():\n    out = []\n    try:\n        with open('dialogues.txt', 'r', encoding='utf-8') as f:\n            for block in f.read().split('\\n\\n'):\n                parts = block.strip().split('\\n')\n                if len(parts) >= 2:\n                    out.append((parts[0].strip(), parts[1].strip()))\n    except FileNotFoundError:\n        pass",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "clean_text",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def clean_text(text: str) -> str:\n    return ''.join(c for c in text.lower() if c.isalpha() or c == ' ').strip()\ndef lemmatize(text: str) -> str:\n    doc = Doc(text)\n    doc.segment(segmenter)\n    doc.tag_morph(morph_tagger)\n    for tok in doc.tokens:\n        tok.lemmatize(morph_vocab)\n    return ' '.join(tok.lemma for tok in doc.tokens)\ndef analyze_sentiment(text: str) -> str:",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "lemmatize",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def lemmatize(text: str) -> str:\n    doc = Doc(text)\n    doc.segment(segmenter)\n    doc.tag_morph(morph_tagger)\n    for tok in doc.tokens:\n        tok.lemmatize(morph_vocab)\n    return ' '.join(tok.lemma for tok in doc.tokens)\ndef analyze_sentiment(text: str) -> str:\n    s = sum(emo_dict.get(w, 0) for w in text.split())\n    return 'положительный' if s > 0 else 'отрицательный' if s < 0 else 'нейтральный'",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "analyze_sentiment",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def analyze_sentiment(text: str) -> str:\n    s = sum(emo_dict.get(w, 0) for w in text.split())\n    return 'положительный' if s > 0 else 'отрицательный' if s < 0 else 'нейтральный'\ndef classify_intent(text: str) -> dict:\n    lem = lemmatize(text)\n    for p in BOT_CONFIG['products']:\n        if any(k in lem for k in p['keywords']):\n            return {'type':'product','data':p}\n    intent = clf.predict(vectorizer.transform([clean_text(text)]))[0]\n    return {'type':'intent','data':intent}",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "classify_intent",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def classify_intent(text: str) -> dict:\n    lem = lemmatize(text)\n    for p in BOT_CONFIG['products']:\n        if any(k in lem for k in p['keywords']):\n            return {'type':'product','data':p}\n    intent = clf.predict(vectorizer.transform([clean_text(text)]))[0]\n    return {'type':'intent','data':intent}\ndef generate_answer(text: str) -> str:\n    t = clean_text(text)\n    t_words = set(t.split())",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "generate_answer",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def generate_answer(text: str) -> str:\n    t = clean_text(text)\n    t_words = set(t.split())\n    for q, a in dialogues:\n        qc = clean_text(q)\n        qc_words = set(qc.split())\n        if qc_words <= t_words:\n            return a\n        if edit_distance(t, qc) / max(len(qc), 1) < 0.4:\n            return a",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def main():\n    app = ApplicationBuilder().token(\"7574327007:AAGSwAM_EMpZ1rhPWbeWmVeOeJY63Ed2flQ\").build()\n    app.add_handler(CommandHandler(\"start\", start))\n    app.add_handler(CommandHandler(\"help\", help_cmd))\n    app.add_handler(CommandHandler(\"products\", show_products))\n    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_text))\n    app.add_handler(MessageHandler(filters.VOICE, handle_voice))\n    app.run_polling()\nif __name__ == \"__main__\":\n    main()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "segmenter",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "segmenter = Segmenter()\nemb = NewsEmbedding()\nmorph_vocab = MorphVocab()\nmorph_tagger = NewsMorphTagger(emb)\n# --- Конфиг бота ---\nBOT_CONFIG = {\n    'intents': {\n        'greeting': {\n            'examples': ['привет', 'здравствуй', 'старт', 'добрый день'],\n            'responses': ['Здравствуйте! Чем могу помочь?']",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "emb",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "emb = NewsEmbedding()\nmorph_vocab = MorphVocab()\nmorph_tagger = NewsMorphTagger(emb)\n# --- Конфиг бота ---\nBOT_CONFIG = {\n    'intents': {\n        'greeting': {\n            'examples': ['привет', 'здравствуй', 'старт', 'добрый день'],\n            'responses': ['Здравствуйте! Чем могу помочь?']\n        },",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "morph_vocab",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "morph_vocab = MorphVocab()\nmorph_tagger = NewsMorphTagger(emb)\n# --- Конфиг бота ---\nBOT_CONFIG = {\n    'intents': {\n        'greeting': {\n            'examples': ['привет', 'здравствуй', 'старт', 'добрый день'],\n            'responses': ['Здравствуйте! Чем могу помочь?']\n        },\n        'goodbye': {",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "morph_tagger",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "morph_tagger = NewsMorphTagger(emb)\n# --- Конфиг бота ---\nBOT_CONFIG = {\n    'intents': {\n        'greeting': {\n            'examples': ['привет', 'здравствуй', 'старт', 'добрый день'],\n            'responses': ['Здравствуйте! Чем могу помочь?']\n        },\n        'goodbye': {\n            'examples': ['пока', 'до свидания', 'увидимся'],",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "BOT_CONFIG",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "BOT_CONFIG = {\n    'intents': {\n        'greeting': {\n            'examples': ['привет', 'здравствуй', 'старт', 'добрый день'],\n            'responses': ['Здравствуйте! Чем могу помочь?']\n        },\n        'goodbye': {\n            'examples': ['пока', 'до свидания', 'увидимся'],\n            'responses': ['До встречи! Заходите ещё.']\n        }",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "emo_dict",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "emo_dict = {\n    'люблю': 1, 'обожаю': 1, 'супер': 1, 'отлично': 1, 'счастлив': 1,\n    'ненавижу': -1, 'ужас': -1, 'плохо': -1, 'грусть': -1, 'злюсь': -1,\n    'нравится': 1, 'печально': -1, 'нормально': 0, 'такое': 0,\n}\n# --- Загрузка диалогов ---\ndef load_dialogues():\n    out = []\n    try:\n        with open('dialogues.txt', 'r', encoding='utf-8') as f:",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "dialogues",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "dialogues = load_dialogues()\n# --- Обучение классификатора намерений ---\nX_text, y = [], []\nfor intent, data in BOT_CONFIG['intents'].items():\n    X_text += data['examples']\n    y += [intent] * len(data['examples'])\nvectorizer = TfidfVectorizer(analyzer='char', ngram_range=(3, 3))\nX = vectorizer.fit_transform(X_text)\nclf = LinearSVC().fit(X, y)\n# --- NLP‑функции ---",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "vectorizer",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "vectorizer = TfidfVectorizer(analyzer='char', ngram_range=(3, 3))\nX = vectorizer.fit_transform(X_text)\nclf = LinearSVC().fit(X, y)\n# --- NLP‑функции ---\ndef clean_text(text: str) -> str:\n    return ''.join(c for c in text.lower() if c.isalpha() or c == ' ').strip()\ndef lemmatize(text: str) -> str:\n    doc = Doc(text)\n    doc.segment(segmenter)\n    doc.tag_morph(morph_tagger)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "X",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "X = vectorizer.fit_transform(X_text)\nclf = LinearSVC().fit(X, y)\n# --- NLP‑функции ---\ndef clean_text(text: str) -> str:\n    return ''.join(c for c in text.lower() if c.isalpha() or c == ' ').strip()\ndef lemmatize(text: str) -> str:\n    doc = Doc(text)\n    doc.segment(segmenter)\n    doc.tag_morph(morph_tagger)\n    for tok in doc.tokens:",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "clf",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "clf = LinearSVC().fit(X, y)\n# --- NLP‑функции ---\ndef clean_text(text: str) -> str:\n    return ''.join(c for c in text.lower() if c.isalpha() or c == ' ').strip()\ndef lemmatize(text: str) -> str:\n    doc = Doc(text)\n    doc.segment(segmenter)\n    doc.tag_morph(morph_tagger)\n    for tok in doc.tokens:\n        tok.lemmatize(morph_vocab)",
+        "detail": "main",
+        "documentation": {}
+    }
+]
